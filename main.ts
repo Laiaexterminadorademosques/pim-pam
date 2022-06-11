@@ -21,16 +21,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
-    otherSprite.destroy(effects.fire, 500)
+    projectile.destroy(effects.fire, 100)
     scene.cameraShake(4, 500)
     ASTEROIDE.destroy()
-    otherSprite.destroy(effects.fire, 500)
+    otherSprite.destroy(effects.confetti, 100)
     info.changeScoreBy(1)
 })
 let ASTEROIDE: Sprite = null
 let projectile: Sprite = null
 let mySprite: Sprite = null
-game.splash("\"BENVINGUTS A LA SELVA\"", "APRETA A PER COMENÇAR")
+game.splash("\"BENVINGUTS A L'ESPAI\"", "APRETA A PER COMENÇAR")
 effects.starField.startScreenEffect()
 mySprite = sprites.create(img`
     . . . . f f f f f . . . . . . . 
